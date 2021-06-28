@@ -26,7 +26,7 @@ declare global {
     }
     var HTMLAwComponentElement: {
         prototype: HTMLAwComponentElement;
-        new(): HTMLAwComponentElement;
+        new (): HTMLAwComponentElement;
     };
     interface HTMLElementTagNameMap {
         "aw-component": HTMLAwComponentElement;
