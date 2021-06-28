@@ -12,11 +12,112 @@
             src="/build/universal-design-system.esm.js"></script>
     <script nomodule
             src="/build/universal-design-system.js"></script>
+
+    <style>
+        .box-row {
+            margin-bottom: 1rem;
+        }
+
+        .box-first {
+            background: #0066CC;
+            border-color: #007FFF;
+        }
+
+        .box-nested {
+            background: #003366;
+            border-color: #007FFF;
+        }
+
+        .box-large {
+            height: 8rem;
+        }
+
+        .box-container {
+            box-sizing: border-box;
+            padding: 0.5rem;
+        }
+
+        .tag {
+            color: #000;
+            font-weight: normal;
+        }
+
+        .end {
+            text-align: end;
+        }
+
+        .invisible-xs {
+            display: none;
+            visibility: hidden;
+        }
+
+        .visible-xs {
+            display: block;
+            visibility: visible;
+        }
+
+        @media only screen and (min-width: 48rem) {
+
+            .box-row,
+            .box-first,
+            .box-nested,
+            .box-large,
+            .box {
+                padding: 1rem;
+            }
+
+            .invisible-md {
+                display: none;
+                visibility: hidden;
+            }
+
+            .visible-md {
+                display: block;
+                visibility: visible;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <aw-component first="Stencil"
                   last="'Don't call me a framework' JS"></aw-component>
+
+    <section>
+        <h2>Responsive</h2>
+
+        <p>Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs,
+            sm, md &amp; lg viewport widths.</p>
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12 size-sm-3 size-md-2 size-lg-1">
+                    <div class="box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-6 size-sm-6 size-md-8 size-lg-10">
+                    <div class="box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-6 size-sm-3 size-md-2 size-lg-1">
+                    <div class="box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-12 size-sm-3 size-md-2 size-lg-1">
+                    <div class="box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-12 size-sm-9 size-md-10 size-lg-11">
+                    <div class="box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-10 size-sm-6 size-md-8 size-lg-10">
+                    <div class="box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-2 size-sm-6 size-md-4 size-lg-2">
+                    <div class="box-row"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+    </section>
 </body>
 
 </html>
