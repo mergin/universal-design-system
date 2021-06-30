@@ -1,0 +1,71 @@
+$size: 6;
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 8px 0 rgba(#000, 0.2), 0 3px 20px 0 rgba(#000, 0.19);
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    > a {
+        opacity: 0;
+        position: absolute;
+        color: #000;
+        background-color: #000;
+        font: bold 4em "Helvetica";
+        $shadow: 5px #fff;
+        text-shadow: 0 -1px $shadow, -1px 0px $shadow, 0 1px $shadow, 1px 0px $shadow;
+        padding: 2rem;
+        mix-blend-mode: difference;
+        width: 100%;
+        height: 100%;
+        transition: all ease 1s;
+    }
+    > img {
+        width: 100%;
+        min-height: 100%;
+        transition: all ease 1s;
+        object-fit: cover;
+    }
+}
+
+:host {
+    @media (max-width: 800px) {
+        width: 48%;
+        margin: 1%;
+        @media (max-width: 350px) {
+            width: 98%;
+        }
+    }
+}
+
+:host(:nth-child(#{$size}n + 1)) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+:host(:nth-child(2)) {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+:host(:nth-child(4)) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+:host(:hover) {
+    img {
+        filter: blur(4px);
+    }
+    a {
+        opacity: 1;
+    }
+}

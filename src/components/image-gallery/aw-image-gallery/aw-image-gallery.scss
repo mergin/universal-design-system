@@ -1,0 +1,20 @@
+$size: 6;
+
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    box-sizing: border-box;
+    display: grid;
+    // height: calc(100vh - 10px);
+    grid-template: repeat($size, 1fr) / repeat($size, 1fr);
+    grid-gap: 0.5em;
+    @media (max-width: 800px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        grid-gap: unset;
+    }
+}

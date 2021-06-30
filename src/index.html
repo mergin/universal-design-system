@@ -24,6 +24,32 @@
 
 <body>
 
+    <!-- IMAGE GALLERY -->
+    <script>
+        customElements.whenDefined('aw-image-gallery').then(() => {
+            // const max = 18;
+            const max = 36;
+            const array = Array.apply(null, Array(max)).map((val, idx) => idx);
+            // const imgStr = 511;
+            const imgStr = 1038;
+            const imageItems = `
+                ${array.map(
+                (el, index) => {
+                    return `
+                            <aw-image-item
+                                image-src="https://picsum.photos/600/600/?image=${imgStr + index + 1}"
+                                image-alt="#${imgStr + index + 1}">
+                            </aw-image-item>`;
+                }
+            ).join('')}`;
+
+            document.querySelector('aw-image-gallery').innerHTML = imageItems;
+        });
+    </script>
+    <section>
+        <aw-image-gallery></aw-image-gallery>
+    </section>
+
     <!-- RESPONSIVE -->
     <section>
         <h2>Responsive</h2>

@@ -24,6 +24,14 @@ export namespace Components {
     }
     interface AwGrid {
     }
+    interface AwImageGallery {
+    }
+    interface AwImageItem {
+        "imageAlt"?: string;
+        "imageHeight"?: string;
+        "imageSrc": string;
+        "imageWidth"?: string;
+    }
     interface AwRow {
     }
 }
@@ -46,6 +54,18 @@ declare global {
         prototype: HTMLAwGridElement;
         new (): HTMLAwGridElement;
     };
+    interface HTMLAwImageGalleryElement extends Components.AwImageGallery, HTMLStencilElement {
+    }
+    var HTMLAwImageGalleryElement: {
+        prototype: HTMLAwImageGalleryElement;
+        new (): HTMLAwImageGalleryElement;
+    };
+    interface HTMLAwImageItemElement extends Components.AwImageItem, HTMLStencilElement {
+    }
+    var HTMLAwImageItemElement: {
+        prototype: HTMLAwImageItemElement;
+        new (): HTMLAwImageItemElement;
+    };
     interface HTMLAwRowElement extends Components.AwRow, HTMLStencilElement {
     }
     var HTMLAwRowElement: {
@@ -56,6 +76,8 @@ declare global {
         "aw-col": HTMLAwColElement;
         "aw-component": HTMLAwComponentElement;
         "aw-grid": HTMLAwGridElement;
+        "aw-image-gallery": HTMLAwImageGalleryElement;
+        "aw-image-item": HTMLAwImageItemElement;
         "aw-row": HTMLAwRowElement;
     }
 }
@@ -78,12 +100,22 @@ declare namespace LocalJSX {
     }
     interface AwGrid {
     }
+    interface AwImageGallery {
+    }
+    interface AwImageItem {
+        "imageAlt"?: string;
+        "imageHeight"?: string;
+        "imageSrc": string;
+        "imageWidth"?: string;
+    }
     interface AwRow {
     }
     interface IntrinsicElements {
         "aw-col": AwCol;
         "aw-component": AwComponent;
         "aw-grid": AwGrid;
+        "aw-image-gallery": AwImageGallery;
+        "aw-image-item": AwImageItem;
         "aw-row": AwRow;
     }
 }
@@ -94,6 +126,8 @@ declare module "@stencil/core" {
             "aw-col": LocalJSX.AwCol & JSXBase.HTMLAttributes<HTMLAwColElement>;
             "aw-component": LocalJSX.AwComponent & JSXBase.HTMLAttributes<HTMLAwComponentElement>;
             "aw-grid": LocalJSX.AwGrid & JSXBase.HTMLAttributes<HTMLAwGridElement>;
+            "aw-image-gallery": LocalJSX.AwImageGallery & JSXBase.HTMLAttributes<HTMLAwImageGalleryElement>;
+            "aw-image-item": LocalJSX.AwImageItem & JSXBase.HTMLAttributes<HTMLAwImageItemElement>;
             "aw-row": LocalJSX.AwRow & JSXBase.HTMLAttributes<HTMLAwRowElement>;
         }
     }
