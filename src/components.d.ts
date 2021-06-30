@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AwCol {
+    }
     interface AwComponent {
         /**
           * The first name
@@ -20,19 +22,46 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface AwGrid {
+    }
+    interface AwRow {
+    }
 }
 declare global {
+    interface HTMLAwColElement extends Components.AwCol, HTMLStencilElement {
+    }
+    var HTMLAwColElement: {
+        prototype: HTMLAwColElement;
+        new (): HTMLAwColElement;
+    };
     interface HTMLAwComponentElement extends Components.AwComponent, HTMLStencilElement {
     }
     var HTMLAwComponentElement: {
         prototype: HTMLAwComponentElement;
         new (): HTMLAwComponentElement;
     };
+    interface HTMLAwGridElement extends Components.AwGrid, HTMLStencilElement {
+    }
+    var HTMLAwGridElement: {
+        prototype: HTMLAwGridElement;
+        new (): HTMLAwGridElement;
+    };
+    interface HTMLAwRowElement extends Components.AwRow, HTMLStencilElement {
+    }
+    var HTMLAwRowElement: {
+        prototype: HTMLAwRowElement;
+        new (): HTMLAwRowElement;
+    };
     interface HTMLElementTagNameMap {
+        "aw-col": HTMLAwColElement;
         "aw-component": HTMLAwComponentElement;
+        "aw-grid": HTMLAwGridElement;
+        "aw-row": HTMLAwRowElement;
     }
 }
 declare namespace LocalJSX {
+    interface AwCol {
+    }
     interface AwComponent {
         /**
           * The first name
@@ -47,15 +76,25 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface AwGrid {
+    }
+    interface AwRow {
+    }
     interface IntrinsicElements {
+        "aw-col": AwCol;
         "aw-component": AwComponent;
+        "aw-grid": AwGrid;
+        "aw-row": AwRow;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "aw-col": LocalJSX.AwCol & JSXBase.HTMLAttributes<HTMLAwColElement>;
             "aw-component": LocalJSX.AwComponent & JSXBase.HTMLAttributes<HTMLAwComponentElement>;
+            "aw-grid": LocalJSX.AwGrid & JSXBase.HTMLAttributes<HTMLAwGridElement>;
+            "aw-row": LocalJSX.AwRow & JSXBase.HTMLAttributes<HTMLAwRowElement>;
         }
     }
 }

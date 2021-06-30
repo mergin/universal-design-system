@@ -1,0 +1,19 @@
+@use './breakpoints' as breakpoints;
+
+@mixin sm-viewport {
+    @media (min-width: #{map-get(breakpoints.$grid-breakpoints, sm)}) {
+        @content;
+    }
+}
+
+@mixin md-viewport {
+    @media (min-width: #{map-get(breakpoints.$grid-breakpoints, md)}) {
+        @content;
+    }
+}
+
+@mixin lg-viewport {
+    @media (min-width: #{map-get(breakpoints.$grid-breakpoints, lg)}) {
+        @content;
+    }
+}

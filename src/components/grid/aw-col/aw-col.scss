@@ -1,3 +1,6 @@
+/* TODO: refactor to real SASS */
+@use '../../../styles/media-queries.scss' as media;
+
 :host {
     box-sizing: border-box;
     flex: 0 0 auto;
@@ -7,6 +10,55 @@
     flex-grow: 1;
     flex-basis: 0;
     max-width: 100%;
+}
+
+/*
+ * Added for demo and example purposes
+ */
+::slotted(.demo-box-row),
+::slotted(.demo-box-first),
+::slotted(.demo-box-nested),
+::slotted(.demo-box-large),
+::slotted(.demo-box) {
+    box-sizing: border-box;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 1rem;
+    margin-bottom: 0;
+    background: #007fff;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+::slotted(.demo-box-row) {
+    margin-bottom: 1rem;
+}
+::slotted(.demo-box-first) {
+    background: #0066cc;
+    border-color: #007fff;
+}
+::slotted(.demo-box-nested) {
+    background: #003366;
+    border-color: #007fff;
+}
+::slotted(.demo-box-large) {
+    height: 8rem;
+}
+::slotted(.demo-box-container) {
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+@include media.sm-viewport {
+    ::slotted(.demo-box-row),
+    ::slotted(.demo-box-first),
+    ::slotted(.demo-box-nested),
+    ::slotted(.demo-box-large),
+    ::slotted(.demo-box) {
+        padding: 1rem;
+    }
 }
 
 :host(.reverse) {
@@ -159,50 +211,50 @@
     margin-left: 91.66666667%;
 }
 
-.start-xs {
+:host(.start-xs) {
     justify-content: flex-start;
     text-align: start;
 }
 
-.center-xs {
+:host(.center-xs) {
     justify-content: center;
     text-align: center;
 }
 
-.end-xs {
+:host(.end-xs) {
     justify-content: flex-end;
     text-align: end;
 }
 
-.top-xs {
+:host(.top-xs) {
     align-items: flex-start;
 }
 
-.middle-xs {
+:host(.middle-xs) {
     align-items: center;
 }
 
-.bottom-xs {
+:host(.bottom-xs) {
     align-items: flex-end;
 }
 
-.around-xs {
+:host(.around-xs) {
     justify-content: space-around;
 }
 
-.between-xs {
+:host(.between-xs) {
     justify-content: space-between;
 }
 
-.first-xs {
+:host(.first-xs) {
     order: -1;
 }
 
-.last-xs {
+:host(.last-xs) {
     order: 1;
 }
 
-@media (--sm-viewport) {
+@include media.sm-viewport {
     .container {
         width: var(--container-sm, 46rem);
     }
@@ -353,51 +405,51 @@
         margin-left: 91.66666667%;
     }
 
-    .start-sm {
+    :host(.start-sm) {
         justify-content: flex-start;
         text-align: start;
     }
 
-    .center-sm {
+    :host(.center-sm) {
         justify-content: center;
         text-align: center;
     }
 
-    .end-sm {
+    :host(.end-sm) {
         justify-content: flex-end;
         text-align: end;
     }
 
-    .top-sm {
+    :host(.top-sm) {
         align-items: flex-start;
     }
 
-    .middle-sm {
+    :host(.middle-sm) {
         align-items: center;
     }
 
-    .bottom-sm {
+    :host(.bottom-sm) {
         align-items: flex-end;
     }
 
-    .around-sm {
+    :host(.around-sm) {
         justify-content: space-around;
     }
 
-    .between-sm {
+    :host(.between-sm) {
         justify-content: space-between;
     }
 
-    .first-sm {
+    :host(.first-sm) {
         order: -1;
     }
 
-    .last-sm {
+    :host(.last-sm) {
         order: 1;
     }
 }
 
-@media (--md-viewport) {
+@include media.md-viewport {
     .container {
         width: var(--container-md, 61rem);
     }
@@ -548,51 +600,51 @@
         margin-left: 91.66666667%;
     }
 
-    .start-md {
+    :host(.start-md) {
         justify-content: flex-start;
         text-align: start;
     }
 
-    .center-md {
+    :host(.center-md) {
         justify-content: center;
         text-align: center;
     }
 
-    .end-md {
+    :host(.end-md) {
         justify-content: flex-end;
         text-align: end;
     }
 
-    .top-md {
+    :host(.top-md) {
         align-items: flex-start;
     }
 
-    .middle-md {
+    :host(.middle-md) {
         align-items: center;
     }
 
-    .bottom-md {
+    :host(.bottom-md) {
         align-items: flex-end;
     }
 
-    .around-md {
+    :host(.around-md) {
         justify-content: space-around;
     }
 
-    .between-md {
+    :host(.between-md) {
         justify-content: space-between;
     }
 
-    .first-md {
+    :host(.first-md) {
         order: -1;
     }
 
-    .last-md {
+    :host(.last-md) {
         order: 1;
     }
 }
 
-@media (--lg-viewport) {
+@include media.lg-viewport {
     .container {
         width: var(--container-lg, 71rem);
     }
@@ -743,46 +795,46 @@
         margin-left: 91.66666667%;
     }
 
-    .start-lg {
+    :host(.start-lg) {
         justify-content: flex-start;
         text-align: start;
     }
 
-    .center-lg {
+    :host(.center-lg) {
         justify-content: center;
         text-align: center;
     }
 
-    .end-lg {
+    :host(.end-lg) {
         justify-content: flex-end;
         text-align: end;
     }
 
-    .top-lg {
+    :host(.top-lg) {
         align-items: flex-start;
     }
 
-    .middle-lg {
+    :host(.middle-lg) {
         align-items: center;
     }
 
-    .bottom-lg {
+    :host(.bottom-lg) {
         align-items: flex-end;
     }
 
-    .around-lg {
+    :host(.around-lg) {
         justify-content: space-around;
     }
 
-    .between-lg {
+    :host(.between-lg) {
         justify-content: space-between;
     }
 
-    .first-lg {
+    :host(.first-lg) {
         order: -1;
     }
 
-    .last-lg {
+    :host(.last-lg) {
         order: 1;
     }
 }
