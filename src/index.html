@@ -13,12 +13,18 @@
     <script nomodule
             src="/build/universal-design-system.js"></script>
 
+    <style>
+        .page-section {
+            padding-top: 3rem;
+            margin-bottom: 3rem;
+        }
+    </style>
+
 </head>
 
 <body>
-    <aw-component first="Stencil"
-                  last="'Don't call me a framework' JS"></aw-component>
 
+    <!-- RESPONSIVE -->
     <section>
         <h2>Responsive</h2>
 
@@ -54,6 +60,533 @@
             </aw-row>
         </aw-grid>
     </section>
+
+    <!-- FLUID -->
+    <section class="page-section">
+        <br>
+        <h2>Fluid</h2>
+
+        <p>Percent based widths allow fluid resizing of columns and rows.</p>
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-1">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-11">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-2">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-10">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-3">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-9">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-4">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-8">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-5">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-7">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-6">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs-6">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+    </section>
+
+    <!-- OFFSET -->
+    <section class="page-section">
+        <h2>Offsets</h2>
+
+        <p>Offset a column</p>
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-offset-11 size-xs-1">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-10 size-xs-2">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-9 size-xs-3">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-8 size-xs-4">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-7 size-xs-5">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-6 size-xs-6">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-5 size-xs-7">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-4 size-xs-8">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-3 size-xs-9">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-2 size-xs-10">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs-offset-1 size-xs-11">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+    </section>
+
+    <!-- AUTO WIDTH -->
+    <section class="page-section">
+        <h2>Auto Width</h2>
+
+        <p>Add any number of auto sizing columns to a row. Let the grid figure it out.</p>
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+            <aw-row>
+                <aw-col class="size-xs">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+                <aw-col class="size-xs">
+                    <div class="demo-box-row"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+    </section>
+
+    <!-- NESTED GRIDS -->
+    <section class="page-section">
+        <h2>Nested Grids</h2>
+
+        <p>Nest grids inside grids inside grids.</p>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-7">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row>
+                                <aw-col class="size-xs-9">
+                                    <div class="demo-box-first demo-box-container">
+                                        <aw-grid>
+                                            <aw-row>
+                                                <aw-col class="size-xs-4">
+                                                    <div class="demo-box-nested"></div>
+                                                </aw-col>
+                                                <aw-col class="size-xs-8">
+                                                    <div class="demo-box-nested"></div>
+                                                </aw-col>
+                                            </aw-row>
+                                        </aw-grid>
+                                    </div>
+                                </aw-col>
+                                <aw-col class="size-xs-3">
+                                    <div class="demo-box-first demo-box-container">
+                                        <aw-grid>
+                                            <aw-row>
+                                                <aw-col class="size-xs">
+                                                    <div class="demo-box-nested"></div>
+                                                </aw-col>
+                                            </aw-row>
+                                        </aw-grid>
+                                    </div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+                <aw-col class="size-xs-5">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row>
+                                <aw-col class="size-xs-12">
+                                    <div class="demo-box-first demo-box-container">
+                                        <aw-grid>
+                                            <aw-row>
+                                                <aw-col class="size-xs-6">
+                                                    <div class="demo-box-nested"></div>
+                                                </aw-col>
+                                                <aw-col class="size-xs-6">
+                                                    <div class="demo-box-nested"></div>
+                                                </aw-col>
+                                            </aw-row>
+                                        </aw-grid>
+                                    </div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+    </section>
+
+    <!-- ALIGNMENT -->
+    <section class="page-section">
+        <h2>Alignment</h2>
+
+        <p>Add classes to align elements to the start or end of a row as well as the top,
+            bottom, or center of a column</p>
+        <h3><code>.start-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class=" start-xs">
+                                <aw-col class="size-xs-6">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+
+        <h3><code>.center-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class=" center-xs">
+                                <aw-col class="size-xs-6">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+        <h3><code>.end-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class=" end-xs">
+                                <aw-col class="size-xs-6">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+        <p>Here is an example of using the modifiers in conjunction to acheive different alignment at different viewport
+            sizes. </p>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class=" center-xs end-sm start-lg">
+                                <aw-col class="size-xs-6">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+        <h3><code>.top-</code></h3>
+
+        <aw-grid>
+            <aw-row class=" top-xs">
+                <aw-col class="size-xs-6">
+                    <div class="demo-box-large"></div>
+                </aw-col>
+                <aw-col class="size-xs-6">
+                    <div class="demo-box"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+        <h3><code>.middle-</code></h3>
+
+        <aw-grid>
+            <aw-row class=" middle-xs">
+                <aw-col class="size-xs-6">
+                    <div class="demo-box-large"></div>
+                </aw-col>
+                <aw-col class="size-xs-6">
+                    <div class="demo-box"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+        <h3><code>.bottom-</code></h3>
+
+        <aw-grid>
+            <aw-row class=" bottom-xs">
+                <aw-col class="size-xs-6">
+                    <div class="demo-box-large"></div>
+                </aw-col>
+                <aw-col class="size-xs-6">
+                    <div class="demo-box"></div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+    </section>
+
+    <!-- DISTRIBUTION -->
+    <section class="page-section">
+        <h2>Distribution</h2>
+
+        <p>Add classes to distribute the contents of a row or column.</p>
+        <h3><code>.around-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class=" around-xs">
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+        <h3><code>.between-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class=" between-xs">
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested"></div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+    </section>
+
+    <!-- REORDERING -->
+    <section class="page-section">
+        <h2>Reordering</h2>
+
+        <p>Add classes to reorder columns.</p>
+        <h3><code>.first-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">1</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">2</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">3</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">4</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">5</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2 first-xs">
+                                    <div class="demo-box-nested">6</div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+        <h3><code>.last-</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row>
+                                <aw-col class="size-xs-2 last-xs">
+                                    <div class="demo-box-nested">1</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">2</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">3</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">4</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">5</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-first">6</div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+    </section>
+
+    <!-- REVERSING -->
+    <section class="page-section">
+        <h2>Reversing</h2>
+
+        <h3><code>.reverse</code></h3>
+
+        <aw-grid>
+            <aw-row>
+                <aw-col class="size-xs-12">
+                    <div class="demo-box demo-box-container">
+                        <aw-grid>
+                            <aw-row class="reverse">
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested">1</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested">2</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested">3</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested">4</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested">5</div>
+                                </aw-col>
+                                <aw-col class="size-xs-2">
+                                    <div class="demo-box-nested">6</div>
+                                </aw-col>
+                            </aw-row>
+                        </aw-grid>
+                    </div>
+                </aw-col>
+            </aw-row>
+        </aw-grid>
+
+
+    </section>
+
 </body>
 
 </html>
