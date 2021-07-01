@@ -37,7 +37,7 @@
                 (el, index) => {
                     return `
                             <aw-image-item
-                                image-src="https://picsum.photos/600/600/?image=${imgStr + index + 1}"
+                                image-src="https://picsum.photos/600/${600 + (index % 2 ? 100 : 0)}/?image=${imgStr + index + 1}"
                                 image-alt="#${imgStr + index + 1}">
                             </aw-image-item>`;
                 }

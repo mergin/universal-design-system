@@ -30,7 +30,8 @@ $size: 6;
     }
     > img {
         width: 100%;
-        min-height: 100%;
+        // min-height: 100%;
+        height: auto;
         transition: all ease 1s;
         object-fit: cover;
     }
@@ -46,20 +47,20 @@ $size: 6;
     }
 }
 
-:host(:nth-child(#{$size}n + 1)) {
-    grid-column: span 2;
-    grid-row: span 2;
-}
+// :host(:nth-child(#{$size}n + 1)) {
+//     grid-column: span 2;
+//     grid-row: span 2;
+// }
 
-:host(:nth-child(2)) {
-    grid-column: span 3;
-    grid-row: span 3;
-}
+// :host(:nth-child(2)) {
+//     grid-column: span 3;
+//     grid-row: span 3;
+// }
 
-:host(:nth-child(4)) {
-    grid-column: span 1;
-    grid-row: span 2;
-}
+// :host(:nth-child(4)) {
+//     grid-column: span 1;
+//     grid-row: span 2;
+// }
 
 :host(:hover) {
     img {
