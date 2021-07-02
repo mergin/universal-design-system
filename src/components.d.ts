@@ -107,6 +107,10 @@ declare namespace LocalJSX {
         "imageHeight"?: string;
         "imageSrc": string;
         "imageWidth"?: string;
+        /**
+          * Event emitted on error with the image loading
+         */
+        "onImageItemError"?: (event: CustomEvent<void>) => void;
     }
     interface AwRow {
     }

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
     tag: 'aw-image-item',
@@ -6,6 +6,11 @@ import { Component, Host, h, Prop } from '@stencil/core';
     shadow: true,
 })
 export class AwImageItem {
+
+    /**
+     * Reference to the Host element
+     */
+    @Element() private readonly element!: HTMLAwImageItemElement;
 
     /**
      *
@@ -27,11 +32,25 @@ export class AwImageItem {
      */
     @Prop() imageWidth?: string;
 
+    /**
+     * Event emitted on error with the image loading
+     */
+    @Event({
+        composed: false,
+        cancelable: false,
+        bubbles: false,
+    })
+    imageItemError!: EventEmitter<void>;
+
+    private imageErrorHandler(): void {
+        this.imageItemError.emit();
+    }
+
     render(): JSX.Element {
         return (
             <Host>
                 <picture>
-                    <img src={this.imageSrc} alt={this.imageAlt} height={this.imageHeight} width={this.imageWidth} />
+                    <img onError={() => this.imageErrorHandler()} src={this.imageSrc} alt={this.imageAlt} height={this.imageHeight} width={this.imageWidth} />
                 </picture>
             </Host>
         );

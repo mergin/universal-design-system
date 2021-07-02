@@ -15,6 +15,13 @@
 | `imageWidth`            | `image-width`  |             | `string` | `undefined` |
 
 
+## Events
+
+| Event            | Description                                   | Type                |
+| ---------------- | --------------------------------------------- | ------------------- |
+| `imageItemError` | Event emitted on error with the image loading | `CustomEvent<void>` |
+
+
 ## Dependencies
 
 ### Used by

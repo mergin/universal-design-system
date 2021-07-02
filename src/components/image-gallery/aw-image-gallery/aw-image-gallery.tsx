@@ -25,13 +25,18 @@ export class AwImageGallery {
         return Array.from(this.element.querySelectorAll<HTMLAwImageItemElement>('aw-image-item'));
     }
 
+    private imageItemErrorHandler(event: CustomEvent<void>): void {
+        (event.target as HTMLAwImageItemElement).parentElement.classList.add('error-image');
+    }
+
     private renderImageItem(imageElement: HTMLAwImageItemElement): JSX.Element {
         return (
             <aw-col class="size-xs-12 size-sm-6 size-md-4 size-lg-4" >
                 <aw-image-item
                     class="image-gallery-item"
                     imageSrc={imageElement.imageSrc}
-                    imageAlt={imageElement.imageAlt}>
+                    imageAlt={imageElement.imageAlt}
+                    onImageItemError={(ev) => this.imageItemErrorHandler(ev)}>
                 </aw-image-item>
             </aw-col>
         );
@@ -39,7 +44,6 @@ export class AwImageGallery {
 
     private renderImageItems(): JSX.Element[] {
         return this.children.map((imageItem) => {
-            console.log(imageItem);
             return this.renderImageItem(imageItem);
         });
     }
