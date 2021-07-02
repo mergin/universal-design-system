@@ -15,6 +15,19 @@
 | `imageWidth`            | `image-width`  |             | `string` | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [aw-image-gallery](../aw-image-gallery)
+
+### Graph
+```mermaid
+graph TD;
+  aw-image-gallery --> aw-image-item
+  style aw-image-item fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

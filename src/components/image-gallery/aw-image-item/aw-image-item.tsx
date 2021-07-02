@@ -30,8 +30,9 @@ export class AwImageItem {
     render(): JSX.Element {
         return (
             <Host>
-                <img src={this.imageSrc} alt={this.imageAlt} height={this.imageHeight} width={this.imageWidth} />
-                <a />
+                <picture>
+                    <img src={this.imageSrc} alt={this.imageAlt} height={this.imageHeight} width={this.imageWidth} />
+                </picture>
             </Host>
         );
     }

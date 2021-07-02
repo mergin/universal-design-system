@@ -23,30 +23,35 @@
 </head>
 
 <body>
+    <!-- <section>
+        <aw-image-item image-src="https://picsum.photos/600/600/?image=1041"
+                       image-alt="#1041">
+        </aw-image-item>
+    </section> -->
 
     <!-- IMAGE GALLERY -->
-    <script>
-        customElements.whenDefined('aw-image-gallery').then(() => {
-            // const max = 18;
-            const max = 36;
-            const array = Array.apply(null, Array(max)).map((val, idx) => idx);
-            // const imgStr = 511;
-            const imgStr = 1038;
-            const imageItems = `
+    <section>
+        <script>
+            customElements.whenDefined('aw-image-gallery').then(() => {
+                // const max = 18;
+                const max = 36;
+                const array = Array.apply(null, Array(max)).map((val, idx) => idx);
+                // const imgStr = 511;
+                const imgStr = 1038;
+                const imageItems = `
                 ${array.map(
-                (el, index) => {
-                    return `
+                    (el, index) => {
+                        return `
                             <aw-image-item
                                 image-src="https://picsum.photos/600/${600 + (index % 2 ? 100 : 0)}/?image=${imgStr + index + 1}"
                                 image-alt="#${imgStr + index + 1}">
                             </aw-image-item>`;
-                }
-            ).join('')}`;
+                    }
+                ).join('')}`;
 
-            document.querySelector('aw-image-gallery').innerHTML = imageItems;
-        });
-    </script>
-    <section>
+                document.querySelector('aw-image-gallery').innerHTML = imageItems;
+            });
+        </script>
         <aw-image-gallery></aw-image-gallery>
     </section>
 
@@ -327,7 +332,7 @@
                 <aw-col class="size-xs-12">
                     <div class="demo-box demo-box-container">
                         <aw-grid>
-                            <aw-row class=" start-xs">
+                            <aw-row class="start-xs">
                                 <aw-col class="size-xs-6">
                                     <div class="demo-box-nested"></div>
                                 </aw-col>
@@ -415,7 +420,7 @@
         <h3><code>.middle-</code></h3>
 
         <aw-grid>
-            <aw-row class=" middle-xs">
+            <aw-row class="middle-xs">
                 <aw-col class="size-xs-6">
                     <div class="demo-box-large"></div>
                 </aw-col>

@@ -25,7 +25,6 @@ export namespace Components {
     interface AwGrid {
     }
     interface AwImageGallery {
-        "columns": 3 | 4 | 5;
     }
     interface AwImageItem {
         "imageAlt"?: string;
@@ -102,7 +101,6 @@ declare namespace LocalJSX {
     interface AwGrid {
     }
     interface AwImageGallery {
-        "columns"?: 3 | 4 | 5;
     }
     interface AwImageItem {
         "imageAlt"?: string;
