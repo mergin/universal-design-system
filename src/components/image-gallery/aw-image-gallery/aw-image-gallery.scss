@@ -12,3 +12,55 @@
         display: none;
     }
 }
+
+:host {
+    .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        .modal {
+            z-index: 9999;
+            background-color: white;
+            width: 80%;
+            max-width: 500px;
+            // padding: 1rem;
+            // border-radius: 8px;
+
+            opacity: 0;
+            transform: translateY(-1rem);
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition-delay: 0.2s;
+        }
+
+        /* when open */
+        &.open-modal {
+            visibility: visible;
+            opacity: 1;
+
+            .modal {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
+
+    /* Modal Background Styles */
+    .modal-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}

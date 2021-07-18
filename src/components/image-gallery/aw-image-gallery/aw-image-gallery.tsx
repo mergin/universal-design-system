@@ -17,8 +17,33 @@ export class AwImageGallery {
      */
     @State() private children: HTMLAwImageItemElement[] = [];
 
+    /**
+     *
+     */
+    private modalContainer: HTMLDivElement;
+
     componentWillLoad(): void {
         this.children = this.getImageItems();
+    }
+
+    private openModal(imageElement: HTMLAwImageItemElement): void {
+        this.modalContainer.querySelector('.modal').appendChild(imageElement);
+        this.modalContainer.classList.add('open-modal');
+
+        // body fix. TODO: move to modal component
+        document.body.style.overflow = 'hidden';
+    }
+
+    private closeModal() {
+        const modal = this.modalContainer.querySelector('.modal') as HTMLElement;
+        modal.ontransitionend = () => {
+            modal.innerHTML = '';
+            modal.ontransitionend = null;
+        };
+        this.modalContainer.classList.remove('open-modal');
+
+        // body fix. TODO: move to modal component
+        document.body.style.overflow = 'auto';
     }
 
     private getImageItems(): HTMLAwImageItemElement[] {
@@ -31,20 +56,23 @@ export class AwImageGallery {
 
     private renderImageItem(imageElement: HTMLAwImageItemElement): JSX.Element {
         return (
-            <aw-col class="size-xs-12 size-sm-6 size-md-4 size-lg-4" >
-                <aw-image-item
-                    class="image-gallery-item"
-                    imageSrc={imageElement.imageSrc}
-                    imageAlt={imageElement.imageAlt}
-                    onImageItemError={(ev) => this.imageItemErrorHandler(ev)}>
-                </aw-image-item>
-            </aw-col>
+            <aw-image-item
+                class="image-gallery-item"
+                imageSrc={imageElement.imageSrc}
+                imageAlt={imageElement.imageAlt}
+                onClick={() => this.openModal(imageElement)}
+                onImageItemError={(ev) => this.imageItemErrorHandler(ev)}>
+            </aw-image-item>
         );
     }
 
     private renderImageItems(): JSX.Element[] {
         return this.children.map((imageItem) => {
-            return this.renderImageItem(imageItem);
+            return (
+                <aw-col class="size-xs-12 size-sm-6 size-md-4 size-lg-4">
+                    {this.renderImageItem(imageItem)}
+                </aw-col>
+            );
         });
     }
 
@@ -56,6 +84,16 @@ export class AwImageGallery {
                         {this.renderImageItems()}
                     </aw-row>
                 </aw-grid>
+
+                {/* modal */}
+                <div
+                    class="modal-container"
+                    ref={(el) => this.modalContainer = el as HTMLDivElement}>
+
+                    <div class="modal"></div>
+
+                    <a onClick={() => this.closeModal()} class="modal-bg"></a>
+                </div>
             </Host>
         );
     }
