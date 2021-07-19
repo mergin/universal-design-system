@@ -32,6 +32,18 @@ export namespace Components {
         "imageSrc": string;
         "imageWidth"?: string;
     }
+    interface AwModal {
+        "close": () => Promise<void>;
+        /**
+          * Indicates if the modal should have round borders
+         */
+        "noBorder"?: boolean;
+        /**
+          * Indicates if the modal should have a padding
+         */
+        "noPadding"?: boolean;
+        "open": () => Promise<void>;
+    }
     interface AwRow {
     }
 }
@@ -66,6 +78,12 @@ declare global {
         prototype: HTMLAwImageItemElement;
         new (): HTMLAwImageItemElement;
     };
+    interface HTMLAwModalElement extends Components.AwModal, HTMLStencilElement {
+    }
+    var HTMLAwModalElement: {
+        prototype: HTMLAwModalElement;
+        new (): HTMLAwModalElement;
+    };
     interface HTMLAwRowElement extends Components.AwRow, HTMLStencilElement {
     }
     var HTMLAwRowElement: {
@@ -78,6 +96,7 @@ declare global {
         "aw-grid": HTMLAwGridElement;
         "aw-image-gallery": HTMLAwImageGalleryElement;
         "aw-image-item": HTMLAwImageItemElement;
+        "aw-modal": HTMLAwModalElement;
         "aw-row": HTMLAwRowElement;
     }
 }
@@ -112,6 +131,20 @@ declare namespace LocalJSX {
          */
         "onImageItemError"?: (event: CustomEvent<void>) => void;
     }
+    interface AwModal {
+        /**
+          * Indicates if the modal should have round borders
+         */
+        "noBorder"?: boolean;
+        /**
+          * Indicates if the modal should have a padding
+         */
+        "noPadding"?: boolean;
+        /**
+          * Event emitted when the modal is closed
+         */
+        "onModalClosed"?: (event: CustomEvent<boolean>) => void;
+    }
     interface AwRow {
     }
     interface IntrinsicElements {
@@ -120,6 +153,7 @@ declare namespace LocalJSX {
         "aw-grid": AwGrid;
         "aw-image-gallery": AwImageGallery;
         "aw-image-item": AwImageItem;
+        "aw-modal": AwModal;
         "aw-row": AwRow;
     }
 }
@@ -132,6 +166,7 @@ declare module "@stencil/core" {
             "aw-grid": LocalJSX.AwGrid & JSXBase.HTMLAttributes<HTMLAwGridElement>;
             "aw-image-gallery": LocalJSX.AwImageGallery & JSXBase.HTMLAttributes<HTMLAwImageGalleryElement>;
             "aw-image-item": LocalJSX.AwImageItem & JSXBase.HTMLAttributes<HTMLAwImageItemElement>;
+            "aw-modal": LocalJSX.AwModal & JSXBase.HTMLAttributes<HTMLAwModalElement>;
             "aw-row": LocalJSX.AwRow & JSXBase.HTMLAttributes<HTMLAwRowElement>;
         }
     }

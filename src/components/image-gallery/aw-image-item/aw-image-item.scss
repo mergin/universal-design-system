@@ -12,13 +12,13 @@
         display: block;
         width: 100%;
         height: auto;
-        transition: all ease 1s;
+        // transition: all ease 1s;
         object-fit: cover;
     }
 }
 
 :host(:hover) {
     img {
-        filter: blur(1px);
+        // filter: blur(1px);
     }
 }
