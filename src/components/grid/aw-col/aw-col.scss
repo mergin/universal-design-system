@@ -1,5 +1,6 @@
 /* TODO: refactor to real SASS */
 @use '../../../styles/media-queries.scss' as media;
+@use '../../../styles/grid-utils.scss' as grid-utils;
 
 :host {
     box-sizing: border-box;
@@ -7,9 +8,7 @@
     padding-right: var(--half-gutter-width, 0.5rem);
     padding-left: var(--half-gutter-width, 0.5rem);
 
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
+    @include grid-utils.autoWidth();
 }
 
 /*
@@ -98,9 +97,7 @@
 }
 
 :host(.size-xs) {
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
+    @include grid-utils.autoWidth();
 }
 
 :host(.size-xs-1) {
@@ -292,9 +289,7 @@
     }
 
     :host(.size-sm) {
-        flex-grow: 1;
-        flex-basis: 0;
-        max-width: 100%;
+        @include grid-utils.autoWidth();
     }
 
     :host(.size-sm-1) {
@@ -487,9 +482,7 @@
     }
 
     :host(.size-md) {
-        flex-grow: 1;
-        flex-basis: 0;
-        max-width: 100%;
+        @include grid-utils.autoWidth();
     }
 
     :host(.size-md-1) {
@@ -682,9 +675,7 @@
     }
 
     :host(.size-lg) {
-        flex-grow: 1;
-        flex-basis: 0;
-        max-width: 100%;
+        @include grid-utils.autoWidth();
     }
 
     :host(.size-lg-1) {

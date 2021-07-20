@@ -1,5 +1,13 @@
-$grid-breakpoints: (
-    sm: 48em,
-    md: 64em,
-    lg: 75em,
-);
+@use "sass:map";
+
+$grid-breakpoints-amount: (
+    xs: 30,
+    sm: 48,
+    md: 64,
+    lg: 75,
+) !default;
+
+$grid-breakpoints: ();
+@each $name, $size in $grid-breakpoints-amount {
+    $grid-breakpoints: map.set($grid-breakpoints, $name, #{$size}em);
+}

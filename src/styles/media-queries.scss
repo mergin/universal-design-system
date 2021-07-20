@@ -1,5 +1,22 @@
 @use './breakpoints' as breakpoints;
 
+$defaultQuery: $viewport-xs !default;
+
+@mixin queries($key, $queries) {
+    $query: map-get($queries, $key);
+    @if ($query == $defaultQuery) {
+        @content;
+    } @else {
+        @media screen and (min-width: #{$query}) {
+            @content;
+        }
+    }
+}
+
+@each $name, $size in $grid-breakpoints {
+    $grid-breakpoints: map.set($grid-breakpoints, $name, #{$size}em);
+}
+
 @mixin sm-viewport {
     @media (min-width: #{map-get(breakpoints.$grid-breakpoints, sm)}) {
         @content;
