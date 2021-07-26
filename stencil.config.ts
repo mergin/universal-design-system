@@ -1,11 +1,19 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
     namespace: 'universal-design-system',
     plugins: [
-        sass()
+        sass(),
+        nodePolyfills()
     ],
+    // rollupPlugins: {
+    //     after: [
+    //         // Plugins injected after commonjs()
+    //         nodePolyfills()
+    //     ]
+    // },
     outputTargets: [
         {
             type: 'dist',

@@ -28,7 +28,8 @@
         "lint": "eslint . --ext .ts"
     },
     "dependencies": {
-        "@stencil/core": "^2.6.0"
+        "@stencil/core": "2.6.0",
+        "pdfjs-dist": "^2.8.335"
     },
     "license": "MIT",
     "devDependencies": {
@@ -36,6 +37,7 @@
         "@commitlint/config-conventional": "^12.1.4",
         "@stencil/sass": "^1.4.1",
         "@types/jest": "^26.0.24",
+        "@types/pdfjs-dist": "^2.7.4",
         "@types/puppeteer": "^5.4.4",
         "@types/react": "^17.0.14",
         "@typescript-eslint/eslint-plugin": "^4.28.3",
@@ -46,6 +48,7 @@
         "husky": "^7.0.1",
         "jest": "^26.6.3",
         "jest-cli": "^26.6.3",
-        "puppeteer": "^10.1.0"
+        "puppeteer": "^10.1.0",
+        "rollup-plugin-node-polyfills": "^0.2.1"
     }
 }
