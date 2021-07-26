@@ -46,6 +46,7 @@ export namespace Components {
     }
     interface AwPdfReader {
         "pdfSrc": string;
+        "workerSrc": string;
     }
     interface AwRow {
     }
@@ -165,6 +166,7 @@ declare namespace LocalJSX {
          */
         "onPdfLoadingError"?: (event: CustomEvent<void>) => void;
         "pdfSrc": string;
+        "workerSrc"?: string;
     }
     interface AwRow {
     }

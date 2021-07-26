@@ -1,5 +1,6 @@
 import { Component, Host, h, Prop, Event, EventEmitter, Element } from '@stencil/core';
-import { getDocument, GlobalWorkerOptions, PDFWorker, PDFDocumentProxy, PDFPageProxy, PDFInfo, PDFMetadata } from "pdfjs-dist/webpack";
+import { PDFDocumentProxy, PDFPageProxy, PDFInfo, PDFMetadata } from 'pdfjs-dist/webpack';
+import pdfjs from '@bundled-es-modules/pdfjs-dist/build/pdf';
 
 @Component({
     tag: 'aw-pdf-reader',
@@ -32,6 +33,11 @@ export class AwPdfReader {
     @Prop() pdfSrc!: string;
 
     /**
+     *
+     */
+    @Prop() workerSrc: string = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.5.207/build/pdf.worker.min.js';
+
+    /**
      * Emitted when file finishes loading
      */
     @Event() pdfLoaded!: EventEmitter<void>;
@@ -49,15 +55,22 @@ export class AwPdfReader {
         await this.setPdf(this.pdfSrc);
     }
 
+    /**
+     *
+     */
     private setPdfWorker(): void {
-        GlobalWorkerOptions.workerPort = new PDFWorker();
+        pdfjs.GlobalWorkerOptions.workerSrc = this.workerSrc;
     }
 
+    /**
+     *
+     * @param pdfSrc
+     */
     private async setPdf(pdfSrc: string) {
         this.clearPages();
         try {
-            const pdfFile: PDFDocumentProxy = await getDocument(pdfSrc).promise;
-            this.pdfMetadata = await pdfFile.getMetadata();
+            const pdfFile: PDFDocumentProxy = await pdfjs.getDocument(pdfSrc).promise;
+            await this.setMetadata(pdfFile);
             await this.buildPages(pdfFile);
         } catch (error) {
             console.log('PDF error', error);
@@ -65,13 +78,23 @@ export class AwPdfReader {
         }
     }
 
+    /**
+     *
+     * @param pdfFile
+     */
+    private async setMetadata(pdfFile: PDFDocumentProxy): Promise<void> {
+        this.pdfMetadata = await pdfFile.getMetadata();
+    }
+
+    /**
+     *
+     * @param pdfFile
+     */
     private async buildPages(pdfFile: PDFDocumentProxy): Promise<void> {
         const viewer = this.pdfViewerElement;
-        const pagesPromises: Promise<PDFPageProxy>[] = [];
-
-        for (let page = 1; page <= pdfFile.numPages; page++) {
-            pagesPromises.push(pdfFile.getPage(page));
-        }
+        const pagesPromises: Promise<PDFPageProxy>[] = [...Array(pdfFile.numPages)].map((_, i) => {
+            return pdfFile.getPage(i + 1)
+        });
 
         const pages: PDFPageProxy[] = await Promise.all(pagesPromises);
         pages.forEach((page: PDFPageProxy, index: number) => {
