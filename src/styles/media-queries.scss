@@ -1,6 +1,7 @@
-@use './breakpoints' as breakpoints;
+@use "./breakpoints" as breakpoints;
+@use "sass:map";
 
-$defaultQuery: $viewport-xs !default;
+$defaultQuery: breakpoints.$viewport-xs !default;
 
 @mixin queries($key, $queries) {
     $query: map-get($queries, $key);
@@ -13,9 +14,9 @@ $defaultQuery: $viewport-xs !default;
     }
 }
 
-@each $name, $size in $grid-breakpoints {
-    $grid-breakpoints: map.set($grid-breakpoints, $name, #{$size}em);
-}
+// @each $name, $size in breakpoints.$grid-breakpoints {
+//     $grid-breakpoints: map.set($grid-breakpoints, $name, #{$size}em);
+// }
 
 @mixin sm-viewport {
     @media (min-width: #{map-get(breakpoints.$grid-breakpoints, sm)}) {

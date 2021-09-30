@@ -11,3 +11,8 @@ $grid-breakpoints: ();
 @each $name, $size in $grid-breakpoints-amount {
     $grid-breakpoints: map.set($grid-breakpoints, $name, #{$size}em);
 }
+
+$viewport-xs: #{map-get($grid-breakpoints-amount, xs)}em !default;
+$viewport-sm: #{map-get($grid-breakpoints-amount, sm)}em !default;
+$viewport-md: #{map-get($grid-breakpoints-amount, md)}em !default;
+$viewport-lg: #{map-get($grid-breakpoints-amount, lg)}em !default;

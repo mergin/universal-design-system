@@ -8,20 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AwCol {
     }
-    interface AwComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface AwGrid {
     }
     interface AwImageGallery {
@@ -44,6 +30,10 @@ export namespace Components {
         "noPadding"?: boolean;
         "open": () => Promise<void>;
     }
+    interface AwPdfReader {
+        "pdfSrc": string;
+        "workerSrc": string;
+    }
     interface AwRow {
     }
 }
@@ -53,12 +43,6 @@ declare global {
     var HTMLAwColElement: {
         prototype: HTMLAwColElement;
         new (): HTMLAwColElement;
-    };
-    interface HTMLAwComponentElement extends Components.AwComponent, HTMLStencilElement {
-    }
-    var HTMLAwComponentElement: {
-        prototype: HTMLAwComponentElement;
-        new (): HTMLAwComponentElement;
     };
     interface HTMLAwGridElement extends Components.AwGrid, HTMLStencilElement {
     }
@@ -84,6 +68,12 @@ declare global {
         prototype: HTMLAwModalElement;
         new (): HTMLAwModalElement;
     };
+    interface HTMLAwPdfReaderElement extends Components.AwPdfReader, HTMLStencilElement {
+    }
+    var HTMLAwPdfReaderElement: {
+        prototype: HTMLAwPdfReaderElement;
+        new (): HTMLAwPdfReaderElement;
+    };
     interface HTMLAwRowElement extends Components.AwRow, HTMLStencilElement {
     }
     var HTMLAwRowElement: {
@@ -92,30 +82,16 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "aw-col": HTMLAwColElement;
-        "aw-component": HTMLAwComponentElement;
         "aw-grid": HTMLAwGridElement;
         "aw-image-gallery": HTMLAwImageGalleryElement;
         "aw-image-item": HTMLAwImageItemElement;
         "aw-modal": HTMLAwModalElement;
+        "aw-pdf-reader": HTMLAwPdfReaderElement;
         "aw-row": HTMLAwRowElement;
     }
 }
 declare namespace LocalJSX {
     interface AwCol {
-    }
-    interface AwComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
     }
     interface AwGrid {
     }
@@ -145,15 +121,27 @@ declare namespace LocalJSX {
          */
         "onModalClosed"?: (event: CustomEvent<boolean>) => void;
     }
+    interface AwPdfReader {
+        /**
+          * Emitted when file finishes loading
+         */
+        "onPdfLoaded"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when file fails to load
+         */
+        "onPdfLoadingError"?: (event: CustomEvent<void>) => void;
+        "pdfSrc": string;
+        "workerSrc"?: string;
+    }
     interface AwRow {
     }
     interface IntrinsicElements {
         "aw-col": AwCol;
-        "aw-component": AwComponent;
         "aw-grid": AwGrid;
         "aw-image-gallery": AwImageGallery;
         "aw-image-item": AwImageItem;
         "aw-modal": AwModal;
+        "aw-pdf-reader": AwPdfReader;
         "aw-row": AwRow;
     }
 }
@@ -162,11 +150,11 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aw-col": LocalJSX.AwCol & JSXBase.HTMLAttributes<HTMLAwColElement>;
-            "aw-component": LocalJSX.AwComponent & JSXBase.HTMLAttributes<HTMLAwComponentElement>;
             "aw-grid": LocalJSX.AwGrid & JSXBase.HTMLAttributes<HTMLAwGridElement>;
             "aw-image-gallery": LocalJSX.AwImageGallery & JSXBase.HTMLAttributes<HTMLAwImageGalleryElement>;
             "aw-image-item": LocalJSX.AwImageItem & JSXBase.HTMLAttributes<HTMLAwImageItemElement>;
             "aw-modal": LocalJSX.AwModal & JSXBase.HTMLAttributes<HTMLAwModalElement>;
+            "aw-pdf-reader": LocalJSX.AwPdfReader & JSXBase.HTMLAttributes<HTMLAwPdfReaderElement>;
             "aw-row": LocalJSX.AwRow & JSXBase.HTMLAttributes<HTMLAwRowElement>;
         }
     }
