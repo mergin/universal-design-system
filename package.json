@@ -29,26 +29,26 @@
     },
     "dependencies": {
         "@bundled-es-modules/pdfjs-dist": "^2.5.207-rc1",
-        "@stencil/core": "2.6.0",
+        "@stencil/core": "2.8.1",
         "pdfjs-dist": "^2.8.335"
     },
     "license": "MIT",
     "devDependencies": {
-        "@commitlint/cli": "^12.1.4",
-        "@commitlint/config-conventional": "^12.1.4",
+        "@commitlint/cli": "^13.2.0",
+        "@commitlint/config-conventional": "^13.2.0",
         "@stencil/sass": "^1.4.1",
         "@types/jest": "^26.0.24",
         "@types/pdfjs-dist": "^2.7.4",
         "@types/puppeteer": "^5.4.4",
-        "@types/react": "^17.0.14",
-        "@typescript-eslint/eslint-plugin": "^4.28.3",
-        "@typescript-eslint/parser": "^4.28.3",
-        "eslint": "^7.30.0",
-        "eslint-plugin-jest": "^24.3.6",
-        "eslint-plugin-react": "^7.24.0",
-        "husky": "^7.0.1",
+        "@types/react": "^17.0.26",
+        "@typescript-eslint/eslint-plugin": "^4.32.0",
+        "@typescript-eslint/parser": "^4.32.0",
+        "eslint": "^7.32.0",
+        "eslint-plugin-jest": "^24.5.0",
+        "eslint-plugin-react": "^7.26.1",
+        "husky": "^7.0.2",
         "jest": "^26.6.3",
         "jest-cli": "^26.6.3",
-        "puppeteer": "^10.1.0"
+        "puppeteer": "^10.4.0"
     }
 }
