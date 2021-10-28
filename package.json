@@ -29,18 +29,18 @@
     },
     "dependencies": {
         "@bundled-es-modules/pdfjs-dist": "^2.5.207-rc1",
-        "@stencil/core": "2.8.1",
+        "@stencil/core": "2.9.0",
         "pdfjs-dist": "^2.8.335"
     },
     "license": "MIT",
     "devDependencies": {
-        "@commitlint/cli": "^13.2.0",
+        "@commitlint/cli": "^13.2.1",
         "@commitlint/config-conventional": "^13.2.0",
-        "@stencil/sass": "^1.4.1",
+        "@stencil/sass": "^1.5.2",
         "@types/jest": "^26.0.24",
         "@types/pdfjs-dist": "^2.7.4",
         "@types/puppeteer": "^5.4.4",
-        "@types/react": "^17.0.26",
+        "@types/react": "^17.0.33",
         "@typescript-eslint/eslint-plugin": "^4.32.0",
         "@typescript-eslint/parser": "^4.32.0",
         "eslint": "^7.32.0",
